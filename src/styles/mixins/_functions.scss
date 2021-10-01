@@ -1,0 +1,7 @@
+@mixin config-utilities($prefix, $property, $values...) {
+  @each $i in $values {
+    .#{$prefix}-#{nth($i, 1)} {
+      #{$property}: #{nth($i, 2)};
+    }
+  }
+}

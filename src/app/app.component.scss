@@ -1,0 +1,13 @@
+.example-container {
+  width: 400px;
+  height: 200px;
+  margin: 10px;
+  border: 1px solid #555;
+}
+
+
+.main {
+  min-height: calc(100vh - 150px);
+  width: 100%;
+  background-color: #ffffff;
+}

@@ -1,0 +1,72 @@
+
+$spacer: 4px;
+$max: 20;
+$spacing-utilities: ('margin', 'padding');
+$sides: ('top', 'right', 'left', 'bottom');
+$attributes: (
+    'x': ('left', 'right'),
+    'y': ('top', 'bottom'),
+);
+
+@each $property in $spacing-utilities {
+  @for $i from 0 through $max {
+    .#{$property}-#{$i} {
+      #{$property}: #{$spacer * $i};
+    }
+
+    @each $attribute, $values in $attributes {
+      .#{$property}-#{$attribute}-#{$i} {
+        #{$property}-#{nth($values, 1)}: #{$spacer * $i};
+        #{$property}-#{nth($values, 2)}: #{$spacer * $i};
+      }
+    }
+
+    @each $side in $sides {
+      .#{$property}-#{$side}-#{$i} {
+        #{$property}-#{$side}: #{$spacer * $i};
+      }
+    }
+  }
+}
+
+.margin-0 {
+  margin: 0;
+}
+
+.margin-x-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.margin-y-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.margin-x-0 {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.margin-y-0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.margin-auto {
+  margin: auto;
+}
+
+.padding-0 {
+  padding: 0;
+}
+
+.padding-x-0 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.padding-y-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}

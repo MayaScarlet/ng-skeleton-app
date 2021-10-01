@@ -1,0 +1,95 @@
+$default-border-radius: 12px!default;
+$default-border-style: 1px solid #e6e6e6!default;
+$border-styles : (dotted, dashed, inset, hidden, solid, double, groove, ridge, outset);
+
+$border-radius-modifier: 4px;
+
+$border-variables: (
+  top: top,
+  bottom: bottom,
+  right: right,
+  left: left
+);
+
+$border-radius: (
+  top: ('top-right', 'top-left'),
+  right: ('top-right', 'bottom-right'),
+  left: ('top-left', 'bottom-left'),
+  bottom: ('bottom-left', 'bottom-right')
+);
+
+@for $index from 1 through 5 {
+  .border-width-#{$index} {
+    border-width: #{$index}px;
+  }
+
+  .border-radius-#{$index} {
+    border-radius: #{$index * $border-radius-modifier}px;
+  }
+
+  @each $value in $border-variables {
+    .border-#{nth($value, 1)}-width-#{$index} {
+      border-#{nth($value, 2)}-width: #{$index}px;
+    }
+  }
+
+  @each $key, $values in $border-radius {
+    .rounded-#{$key}-#{$index} {
+      border-#{nth($values, 1)}-radius: #{$border-radius-modifier * $index};
+      border-#{nth($values, 2)}-radius: #{$border-radius-modifier * $index};
+    }
+  }
+}
+//Creates border width classes like border-width-1, border-width-2
+
+@each $value in $border-styles {
+  .border-style-#{$value} {
+    border-style: $value;
+  }
+}
+//Creates border styles classes like border-style-solid, border-style-dashed, border-style-groove
+
+@each $value in $border-variables {
+  @for $i from 0 through 1 {
+    @if $i == 0  {
+      .border-#{nth($value, 1)}-#{$i} {
+        #{nth($value, 2)}: 0;
+      }
+    } @else {
+      .border-#{nth($value, 1)} {
+        #{nth($value, 2)}: #{$default-border-style};
+      }
+    }
+  }
+}
+// Creates border sides classes like border-top, border-right, border-top-0, border-bottom-0
+
+@each $side, $values in $border-radius {
+  .rounded-#{$side} {
+    border-#{nth($values, 1)}-radius: #{$default-border-radius};
+    border-#{nth($values, 2)}-radius: #{$default-border-radius};
+  }
+  .rounded-#{$side}-0 {
+    border-#{nth($values, 1)}-radius: 0;
+    border-#{nth($values, 2)}-radius: 0;
+  }
+}
+//Creates classes like rounded-top-0, rounded-top, rounded-left, rounded-right
+
+
+.border {
+  border: $default-border-style;
+}
+
+.rounded-border {
+  border: $default-border-style;
+  border-radius: $default-border-radius;
+}
+
+.border-0 {
+  border: 0!important;
+}
+
+.rounded-circle {
+  border-radius: 50%;
+}
