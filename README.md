@@ -1,5 +1,5 @@
 # Angular Skeleton App
-The ng-skeleton app project is a Angular starter project with a standalone project configuration.
+The ng-skeleton app is a Angular starter project with a standalone project configuration.
 Can be used as a template for Angular projects
 
 Here's what this skeleton project includes:
