@@ -30,19 +30,6 @@
             "styles": [
               "src/styles/main.scss"
             ],
-            "stylePreprocessorOptions": {
-              "includePaths": [
-                "./src/styles/abstracts/_colors.scss",
-                "./src/styles/abstracts/_fonts.scss",
-                "./src/styles/mixins/_.breakpoints.scss",
-                "./src/styles/mixins/_functions.scss",
-                "./src/styles/mixins/_.buttons.scss",
-                "./src/styles/utilities/_.pointers.scss",
-                "./src/styles/utilities/_.widths.scss",
-                "./src/styles/utilities/_borders.scss",
-                "./src/styles/utilities/_spacing.scss"
-              ]
-            },
             "scripts": []
           },
           "configurations": {
@@ -136,19 +123,6 @@
             "styles": [
               "src/styles/main.scss"
             ],
-            "stylePreprocessorOptions": {
-              "includePaths": [
-                "./src/styles/abstracts/_colors.scss",
-                "./src/styles/abstracts/_fonts.scss",
-                "./src/styles/mixins/_.breakpoints.scss",
-                "./src/styles/mixins/_functions.scss",
-                "./src/styles/mixins/_.buttons.scss",
-                "./src/styles/utilities/_.pointers.scss",
-                "./src/styles/utilities/_.widths.scss",
-                "./src/styles/utilities/_borders.scss",
-                "./src/styles/utilities/_spacing.scss"
-              ]
-            },
             "scripts": []
           }
         },

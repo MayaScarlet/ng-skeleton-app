@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { SearchComponent } from './modules/search/search.component';
+import { ErrorComponent } from './modules/error/error.component';
 
 const routes: Routes = [
   {
@@ -9,6 +11,19 @@ const routes: Routes = [
   {
     path: 'detail',
     loadChildren: () => import('./modules/detail/detail.module').then(m => m.DetailModule)
+  },
+  {
+    path: 'search',
+    component: SearchComponent
+  },
+  {
+    path: 'error',
+    component: ErrorComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'error',
+    pathMatch: 'full'
   }
 ];
 
